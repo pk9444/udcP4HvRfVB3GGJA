@@ -65,70 +65,90 @@ The data comes from direct marketing efforts of a European banking institution. 
 
 #### CONTINUOUS FEATURES
 
-1. **DURATION**
+   1. **DURATION**
+   
+   - Most likely subscribers (prob >= 70%) tend to have call durations between 500 and 1200 seconds.
+   - The distribution of the duration is skewed rightwatds, with fewer subscribers as we go beyond 2000-second call duration mark.
+   
+       **Implications:**
+   
+       - So, it can implied that call durations that go on longer, correlate to a greater likelihood of the customer getting converted to a subscriber. 
+       - It may also imply that longer calls may have more detailed and engaging conversations, hence the better conversion rate.
+   
+       **Recommendation(s):** 
+       - Target customers segments with the potential for longer interactions. Train call center agents to provide as much as insight as possible to the customer.
+       - However, the agents must be very on-point, because extremely longer calls can lead to customer attrition and the customer may treat it as a overbearing.
+   
+   2. **BALANCE**
+   
+   - The majority of likely subscribers (prob >= 70%) have balances close to 0, but there is a noticeable tail toward higher balances.
+   - The peak is sharp at low balances, indicating that a higher balance is not necessarily a requirement for a customer converting to subscriber.
+   
+       **Implications:**
+   
+       - Therefore, a high balance is not a prerequisite for subscription, as many lower-balance clients still get converted to subsribers. 
+       - Though customers with some positive or incremental balance still form a substantial part of likely subscribers.
+   
+       **Recommendation(s):** 
+       - Avoid the assumption that only wealthy customers are like subscribers. The signalling should be inclusive across income levels.
+       - Building tailored investment products might even attract greater number of customers such as loyalty programmes, discounted offers on long-term subscription and other similar offerings.
+   
+   3. **BALANCE**
+   
+   - The majority of likely subscribers (prob >= 70%) have balances close to 0, but there is a noticeable tail toward higher balances.
+   - The peak is sharp at low balances, indicating that a higher balance is not necessarily a requirement for a customer converting to subscriber.
+   
+       **Implications:**
+   
+       - Therefore, a high balance is not a prerequisite for subscription, as many lower-balance clients still get converted to subsribers. 
+       - Though customers with some positive or incremental balance still form a substantial part of likely subscribers.
+   
+       **Recommendation(s):** 
+       - Avoid the assumption that only wealthy customers are like subscribers. The signalling should be inclusive across income levels.
+       - Building tailored investment products might even attract greater number of customers such as loyalty programmes, discounted offers on long-term subscription and other similar offerings.
+   
+   #### DISCRETE FEATURES
+   
+   1. **JOB**
+   
+       - The customer segment most likely to be converted to subscribers are skilled-labor i.e. who work as managers or admins. Almost 50% have a likelihood of > 0.7. 
+       - The client should also secondarily prioritize the white collar customers like retired persons, student workers, househelps and even unemployed who could be potential leads.
+     
+   2. **AGE**
+   
+       - Build strategies that are targeted towards customers who are between 30 and 50 years old, as nearly 2/3rd of them turned out to be potential leads.  
+       - It is suggested to the client that they may avoid working on strategies for customer segements outside this age range, atleast for now. 
+   
+   3. **MARITAL**
+   
+       - Married customers are the overwhelmingly more likely to be converted to subscribers that single or those customers whose marital status is unknown. 
+       - A possible strategy could be to build investment products that provide special offerings to married couples, something like joint subscrption for lesser price. 
+   
+   3. **LOAN**
+   
+       - The customers who have not taken a personal loan are overwhelmingly likelier to turn into subscribers and hence, should be prioritized.
+       - This could imply the personal loans are not a major driver of subscription, and the investment product may not focus on personal loans while strategizing. 
+   4. **HOUSING**
+   
+       - While most likely subscribers have not taken a housing loan, a substantial number of them do have housing loans.  
+       - Therefore, the client could build secondary strategies, maybe in the longer run, that could help potential leads, that could help them navigate housing loans.
 
-- Most likely subscribers (prob >= 70%) tend to have call durations between 500 and 1200 seconds.
-- The distribution of the duration is skewed rightwatds, with fewer subscribers as we go beyond 2000-second call duration mark.
 
-    **Implications:**
+### IMPORTANT FEATURES TO FOCUS ON
 
-    - So, it can implied that call durations that go on longer, correlate to a greater likelihood of the customer getting converted to a subscriber. 
-    - It may also imply that longer calls may have more detailed and engaging conversations, hence the better conversion rate.
+| Feature | Include | Type |Inferences |
+| --- | --- | --- | --- |
+| duration | Must Include | continuous | Confirmed as the strongest predictor |
+| balance | Must Include | continuous | Use the original balance feature for tree models - use its capped version for linear models |
+| month | Must Include | discrete | Most predictive discrete feature - use as it as and do not generalize into quarters - maintain seasonality |
+| housing | Must Include | discrete | Consistent and informative feature, and safe to be included |
+| contact | Must Include | discrete | Both MI and Chi² confirm value, and fairly important since calls are an important subscription aspect |
+| marital | Recommended to Include | discrete | Moderate predictive power but insightful when to comes to customer segments |
+| age | Recommended to Include  | discrete |Gives a good idea about idea about what age groups subscribe; use the discretized version |
+| job | Recommended to Include  | discrete | Based on the feature revalidation, use the grouped version instead, which is more indicative  |
+| loan | Optional to Include  | discrete | Weak MI but statistically significant; useful in ensemble models, avoid in linear models  |
+| campaign | Optional to Include  | continuous | Very low MI but may help in tree-based models, avoid in linear models as well, use the capped version 
+| day | Do not Include  | continuous | 	Low MI and low interpretability due to its ambiguous nature of both discrete and continuous |
+| default | Do not Include  | discrete | Neither statistically signficant or informatively useful, should have been, but its not for this data |
 
-    **Recommendation(s):** 
-    - Target customers segments with the potential for longer interactions. Train call center agents to provide as much as insight as possible to the customer.
-    - However, the agents must be very on-point, because extremely longer calls can lead to customer attrition and the customer may treat it as a overbearing.
 
-2. **BALANCE**
-
-- The majority of likely subscribers (prob >= 70%) have balances close to 0, but there is a noticeable tail toward higher balances.
-- The peak is sharp at low balances, indicating that a higher balance is not necessarily a requirement for a customer converting to subscriber.
-
-    **Implications:**
-
-    - Therefore, a high balance is not a prerequisite for subscription, as many lower-balance clients still get converted to subsribers. 
-    - Though customers with some positive or incremental balance still form a substantial part of likely subscribers.
-
-    **Recommendation(s):** 
-    - Avoid the assumption that only wealthy customers are like subscribers. The signalling should be inclusive across income levels.
-    - Building tailored investment products might even attract greater number of customers such as loyalty programmes, discounted offers on long-term subscription and other similar offerings.
-
-3. **BALANCE**
-
-- The majority of likely subscribers (prob >= 70%) have balances close to 0, but there is a noticeable tail toward higher balances.
-- The peak is sharp at low balances, indicating that a higher balance is not necessarily a requirement for a customer converting to subscriber.
-
-    **Implications:**
-
-    - Therefore, a high balance is not a prerequisite for subscription, as many lower-balance clients still get converted to subsribers. 
-    - Though customers with some positive or incremental balance still form a substantial part of likely subscribers.
-
-    **Recommendation(s):** 
-    - Avoid the assumption that only wealthy customers are like subscribers. The signalling should be inclusive across income levels.
-    - Building tailored investment products might even attract greater number of customers such as loyalty programmes, discounted offers on long-term subscription and other similar offerings.
-
-#### DISCRETE FEATURES
-
-1. **JOB**
-
-    - The customer segment most likely to be converted to subscribers are skilled-labor i.e. who work as managers or admins. Almost 50% have a likelihood of > 0.7. 
-    - The client should also secondarily prioritize the white collar customers like retired persons, student workers, househelps and even unemployed who could be potential leads.
-  
-2. **AGE**
-
-    - Build strategies that are targeted towards customers who are between 30 and 50 years old, as nearly 2/3rd of them turned out to be potential leads.  
-    - It is suggested to the client that they may avoid working on strategies for customer segements outside this age range, atleast for now. 
-
-3. **MARITAL**
-
-    - Married customers are the overwhelmingly more likely to be converted to subscribers that single or those customers whose marital status is unknown. 
-    - A possible strategy could be to build investment products that provide special offerings to married couples, something like joint subscrption for lesser price. 
-
-3. **LOAN**
-
-    - The customers who have not taken a personal loan are overwhelmingly likelier to turn into subscribers and hence, should be prioritized.
-    - This could imply the personal loans are not a major driver of subscription, and the investment product may not focus on personal loans while strategizing. 
-4. **HOUSING**
-
-    - While most likely subscribers have not taken a housing loan, a substantial number of them do have housing loans.  
-    - Therefore, the client could build secondary strategies, maybe in the longer run, that could help potential leads, that could help them navigate housing loans.   
