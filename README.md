@@ -54,12 +54,12 @@ The data comes from direct marketing efforts of a European banking institution. 
 
 ### POST-HOC ANALYSIS
 
-![Apziva_P2_ROC_Curve](https://github.com/user-attachments/assets/d4e5cfab-f3d3-422a-b16f-813b9e355eb7)
+![Apziva_P2_ROC_Curve](https://github.com/user-attachments/assets/efa42c4e-abd1-4811-a7ce-48c45ad17756)
 
 - The AUC score of ~0.93 indicates very strong separability between y=1 and y-0. An ideal classifier would score 1.0, which means the model is quite good at distinguishing between customers who will and won’t subscribe. 
 - The curve rises sharply to the top-left corner i.e. the True Positive Rate (TPR or Recall) increases rapidly with only a small increase in False Positive Rate, which is a good predictive indicator for subscribers.
 
-![image](https://github.com/user-attachments/assets/847aaa66-a2fe-44eb-b5af-522882e1e791)
+![Apziva_P2_PR_Curve](https://github.com/user-attachments/assets/3cec08f8-40eb-4b93-b2fd-a7e16414f302)
 
 - AUC-PR score of 0.46 is modest. It implies moderate ability to balance precision and recall - something expected in imbalanced classification problems like this one - where its a 93% to 7% imbalance.
 - Precision goes down with increment in recall. As the model tries to capture more positives (higher recall), it also predicts more false positives, thereby reducing precision. Therefore, there is a trade-off between Precision and Recall.
