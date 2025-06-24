@@ -39,3 +39,7 @@ The data comes from direct marketing efforts of a European banking institution. 
 ## METHODLOGY
 ![Apziva_P2_Methodology](https://github.com/user-attachments/assets/c20fda10-f2c6-4fde-b4bb-a614b1995bae)
 
+## MACHINE LEARNING PIPELINE
+![Apziva_P2_Pipeline](https://github.com/user-attachments/assets/28b122de-7546-46ee-91b7-c12501615110)
+
+
