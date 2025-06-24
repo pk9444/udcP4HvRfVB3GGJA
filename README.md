@@ -71,6 +71,8 @@ The data comes from direct marketing efforts of a European banking institution. 
 
 #### CONTINUOUS FEATURES
 
+![Apziva_P2_Customer_Segment_Continuous](https://github.com/user-attachments/assets/086cbf60-53d1-4a2c-b5d1-b78f4564b2c5)
+
    1. **DURATION**
    
    - Most likely subscribers (prob >= 70%) tend to have call durations between 500 and 1200 seconds.
@@ -114,7 +116,10 @@ The data comes from direct marketing efforts of a European banking institution. 
        - Building tailored investment products might even attract greater number of customers such as loyalty programmes, discounted offers on long-term subscription and other similar offerings.
    
    #### DISCRETE FEATURES
-   
+
+   ![Apziva_P2_Customer_Segment_Discrete](https://github.com/user-attachments/assets/3127a1f2-1bb9-4da4-8823-34a88a1396ef)
+
+
    1. **JOB**
    
        - The customer segment most likely to be converted to subscribers are skilled-labor i.e. who work as managers or admins. Almost 50% have a likelihood of > 0.7. 
