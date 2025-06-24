@@ -35,3 +35,7 @@ The data comes from direct marketing efforts of a European banking institution. 
 - Achieve an accuracy of **>= 81%** by evaluating with 5-fold cross validation and reporting the average performance score.
 - Determine the segment(s) of customers that the client should prioritize i.e. who are more likely to buy the investment product.
 - Find out the features that contribute the most towards guaging what the customers buy and the client should be focusing more on.
+
+## METHODLOGY
+![Apziva_P2_Methodology](https://github.com/user-attachments/assets/c20fda10-f2c6-4fde-b4bb-a614b1995bae)
+
