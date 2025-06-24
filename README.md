@@ -61,7 +61,7 @@ The data comes from direct marketing efforts of a European banking institution. 
 
 ## BUSINESS RECOMMENDATIONS
 
-## PRIORTY CUSTOMER SEGMENTS
+### PRIORTY CUSTOMER SEGMENTS
 
 #### CONTINUOUS FEATURES
 
@@ -107,4 +107,28 @@ The data comes from direct marketing efforts of a European banking institution. 
     - Avoid the assumption that only wealthy customers are like subscribers. The signalling should be inclusive across income levels.
     - Building tailored investment products might even attract greater number of customers such as loyalty programmes, discounted offers on long-term subscription and other similar offerings.
 
+#### DISCRETE FEATURES
 
+1. **JOB**
+
+    - The customer segment most likely to be converted to subscribers are skilled-labor i.e. who work as managers or admins. Almost 50% have a likelihood of > 0.7. 
+    - The client should also secondarily prioritize the white collar customers like retired persons, student workers, househelps and even unemployed who could be potential leads.
+  
+2. **AGE**
+
+    - Build strategies that are targeted towards customers who are between 30 and 50 years old, as nearly 2/3rd of them turned out to be potential leads.  
+    - It is suggested to the client that they may avoid working on strategies for customer segements outside this age range, atleast for now. 
+
+3. **MARITAL**
+
+    - Married customers are the overwhelmingly more likely to be converted to subscribers that single or those customers whose marital status is unknown. 
+    - A possible strategy could be to build investment products that provide special offerings to married couples, something like joint subscrption for lesser price. 
+
+3. **LOAN**
+
+    - The customers who have not taken a personal loan are overwhelmingly likelier to turn into subscribers and hence, should be prioritized.
+    - This could imply the personal loans are not a major driver of subscription, and the investment product may not focus on personal loans while strategizing. 
+4. **HOUSING**
+
+    - While most likely subscribers have not taken a housing loan, a substantial number of them do have housing loans.  
+    - Therefore, the client could build secondary strategies, maybe in the longer run, that could help potential leads, that could help them navigate housing loans.   
