@@ -81,4 +81,70 @@ The data comes from direct marketing efforts of a European banking institution. 
 - Optimal threshold depends on priority of business goals — low threshold favors recall, while higher threshold favors precision. 
 
 
+## BUSINESS RECOMMENDATIONS
+
+### WHAT MAKES THE CUSTOMERS SUBSCRIBE?
+
+#### OBSERVATIONS
+Based on post-hoc feature importance analysis, these features have the highest influence on the model’s decision-making:
+
+1. **Contact**
+    - The most importance feature - what mode of communication the customer uses is highly predictive of subscription.
+    - Customers contacted via cellular are significantly more likely to subscribe, possibly due to accessibility or responsiveness during mobile communication.
+
+2. **Duration (Call duration)**
+
+    - The second most important determiner of subscription - how long do the customers talk to the client 
+    - Calls between 600-1000 seconds or greater than 1000 seconds are strongly associated with customer conversion.
+    - Implies detailed and meaningful calls builds a deeper engagement with customer and subsequently, greater chance to gaining a subscriber.
+
+3. **Month**
+
+    - Contacts during March and October leads to noticeably higher conversion.
+    - These months may align with specific marketing campaigns, financial periods, or seasonal availability.
+
+4. **Other relevant subscription drivers**
+
+    - **Housing**: Customers without a housing loan show better conversion.
+    - **Day** and **Age Group**: Reflect subtle behavioral or demographic patterns.
+    - **Education**, **Marital**, **Job Group**, **Campaign** also add moderate predictive power.
+
+#### SUMMARY 
+Focus on longer but meaningful conversations, use cellular contact methods, and time the outreach during March or October to maximize success.
+
+Follow this quick rule to build a marketing strategy: <br>
+    -> if call_duration is [>600s] and contact == cellular and month in [mar, oct] -> prioritize outreach.
+
+
+### WHICH CUSTOMER SEGMENTS SHOULD BE PRIORITIZED?
+
+#### OBSERVATIONS
+
+Based on the insights from Actual vs. Predicted % of Subscribers, the following customer segments emerge as prime targets:
+
+**Job Profile**
+- Customers in the "high_subscribe" group - mainly students, retired, or unemployed have higher natural conversion to become subscribers.
+- These individuals may have more time, fewer commitments, or different motivations for saving or investing in the product.
+
+**Marital Status**
+
+- Single customers are significantly more likely to subscribe, maybe due to greater independent financial decision-making.
+
+**Education**
+
+- Those with tertiary education show consistently higher interest and conversion.
+- It implies that financial literacy or awareness for the investment product could be contributing factors for them to subscribe.
+
+**Month & Contact**
+
+- Highest actual and predicted conversions observed in March and October.
+- Cellular mode of contact highly dominates in conversion effectiveness.
+
+**Call Duration**
+- As mentioned, the longer call duration (> 1000 seconds) show very high actual and predicted success.
+- However, these calls need to be meaningful, well-explanatory and focused towards addressing the customer concerns - else it could backfire and lead to a customer churn.
+  
+#### SUMMARY
+
+Prioritize students, retired, single and highly educated customers, contact via cellular and in March or October, with longer but meaningful engagement to boost conversion rates.
 
