@@ -37,7 +37,7 @@ The data comes from direct marketing efforts of a European banking institution. 
 - Find out the features that contribute the most towards guaging what the customers buy and the client should be focusing more on.
 
 ## METHODLOGY
-![Apziva_P2_Methodology](https://github.com/user-attachments/assets/8d5e75dd-d39a-4851-9ccd-4bb8b57c041d)
+![Apziva_P2_Methodology](https://github.com/user-attachments/assets/d4d17678-5c7c-4fa9-af74-72f7f37099db)
 
 
 ## MACHINE LEARNING PIPELINE
@@ -47,39 +47,28 @@ The data comes from direct marketing efforts of a European banking institution. 
 
 ### INSIGHTS FROM THE PERFORMANCE METRICS AND MODEL EVALUATION
 
-- The model has the almost same accuracy of ~83% on both training and test sets, almost an ideal scenario - which means it is neither underfitting nor overfitting.
-- For target y=1, the model has a strong recall of ~92% on the training set and ~90% on the test set - which implies very strong generalization on unseen data.
-- The ability to generalize can be further validated by the F-1 scores which are very close in both training and test sets.
-- The model has a much higher recall (which is what we actually need) and lower precision, hence, there is some kind of trade-off that we need to delve further into.
+#### BASELINE MODEL TESTING
+- The XGBoost is marginally more consistent in terms of the accuracy compared to the LightBGM.
+- The LightBGM greatly overfits - the Precision and Recall are very hight on the training set but very low on the test set.
+- The XGBoost has higher precision and lower recall, in both training and test set - we need high recall, especially on test/unseen data.
+
+#### POST HYPERPARAMETER TUNING AND THRESHOLDING
+- At a threshold value of 0.22, we achieve the highest possible F-1 measure of 56% i.e. the best balance between the precision and recall.
+- At this F-1 measure and threshold, the precision is ~42% and recall is ~67% for y=1 i.e. subscribers.
+- This means that at this configuration, the tuned XGB correctly predicts almost 2/3rd customers that will subscribe to the investment product.
+- This is a fairly good performance metric and on top of that, even the accuracy has reached back to ~92%, higher than what we recorded previously.
+- Hence, this is our final model - the tuned XGBoost with a threshold of 0.22.
 
 ### POST-HOC ANALYSIS
 
 #### IMPORTANT FEATURES
 
-![Apziva_P2_Feature_Importance](https://github.com/user-attachments/assets/3443f374-833e-46ee-8387-122b176c5525)
+![Apziva_P2_Feature_Importance](https://github.com/user-attachments/assets/e5b0b147-46f1-4691-8310-7600a53de53a)
 
-- Based on the best model's feature importances, the duration is by far the strongest predictor of the subscription likelihood by a large margin.
+- Based on the best model's feature importances, the duration is by far the strongest predictor of the subscription likelihood.
 - After the duration, the contact i.e. the mode of communication via the client reaches out to the customer is deterministic of the target.
 - Month is also a moderately predictive, meaningly there is also some sort of seasonality that affects the likelihood of subscription.
-- The other remaning features like Housing, age group, loan, balance, job group, education level and marital status are less deterministic. 
-
-#### PRECISION RECALL CURVE 
-
-![Apziva_P2_PR_Curve](https://github.com/user-attachments/assets/41ff9419-6925-470a-a739-7d00fbcb882d)
-
-- AUC-PR score of ~0.54 is modest. It implies moderate ability to balance precision and recall - something expected in imbalanced classification problems like this one - where its a 93% to 7% imbalance.
-- Precision goes down with increment in recall. As the model tries to capture more positives (higher recall), it also predicts more false positives, thereby reducing precision. So, there is a trade-off between Precision and Recall.
-- For this problem, customers that are potential subscribers are the leads. So, we need to get them rightly predicted. Hence, higher recall or the True Positive Rate (TPR) must be prioritized.
-
-#### PRECISION-RECALL TRADE-OFF
-
-![Apziva_P2_PRT_Curve](https://github.com/user-attachments/assets/a286b75f-8326-4d71-92d9-0d91917638cd)
-
-
-- Recall stays near 1.0 until threshold ~0.5, indicating the model captures nearly all True positives at lower thresholds.
-- Precision steadily improves with increasing threshold, crossing recall around threshold ~0.8, suggesting this is the near trade-off zone for balanced performance.
-- Optimal threshold depends on priority of business goals — low threshold favors recall, while higher threshold favors precision. 
-
+- The other remaning features like Housing, age group, loan, balance, job group are less deterministic. 
 
 ## BUSINESS RECOMMENDATIONS
 
