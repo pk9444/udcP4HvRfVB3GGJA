@@ -88,33 +88,31 @@ The data comes from direct marketing efforts of a European banking institution. 
 #### OBSERVATIONS
 Based on post-hoc feature importance analysis, these features have the highest influence on the model’s decision-making:
 
-1. **Contact**
-    - The most importance feature - what mode of communication the customer uses is highly predictive of subscription.
-    - Customers contacted via cellular are significantly more likely to subscribe, possibly due to accessibility or responsiveness during mobile communication.
+1. **Call Duration is the Most Critical Factor**
+- Customers who stay longer on the call are significantly more likely to subscribe.
+- This implies that engagement quality and agent communication during the call is a decisive influence.
+- **Strategy**: Train call agents to focus on keeping customers engaged and prolonging but meaningful conversations.
 
-2. **Duration (Call duration)**
+2. **Month of Campaigns Matters**
+- Month features in March, Oct, April, Aug, June. Since, March and Oct have very few observations, focus on April, Aug and June. 
+- This indicates that subscriptions exhibit some kind of seasonality by month in terms of campaign effectiveness.
+- **Strategy**: Invest more resources and targeted campaigns during high-performing months like April, August and June.
 
-    - The second most important determiner of subscription - how long do the customers talk to the client 
-    - Calls between 600-1000 seconds or greater than 1000 seconds are strongly associated with customer conversion.
-    - Implies detailed and meaningful calls builds a deeper engagement with customer and subsequently, greater chance to gaining a subscriber.
+3. **Mode of Contact is a Key Driver**
+- Cellular mode of contact often appears as among higher ranked feature compared to telephone or unknown.
+- Customers contacted via cellular means tend to convert to subscribers more often than telephone.
+- **Strategy**: Prioritize cellular outreach to customers.
 
-3. **Month**
-
-    - Contacts during March and October leads to noticeably higher conversion.
-    - These months may align with specific marketing campaigns, financial periods, or seasonal availability.
-
-4. **Other relevant subscription drivers**
-
-    - **Housing**: Customers without a housing loan show better conversion.
-    - **Day** and **Age Group**: Reflect subtle behavioral or demographic patterns.
-    - **Education**, **Marital**, **Job Group**, **Campaign** also add moderate predictive power.
+4. **Loan, Housing and Job Group Show Minor Influence**
+- Features like housing, job and loan have smaller feature importances but are still relevant.
+- These might reflect financial status, which could influence interest in financial products like deposits.
+- **Strategy**: While not top determiners, it maybe worth considering financial flags as supporting features.
 
 #### SUMMARY 
 Focus on longer but meaningful conversations, use cellular contact methods, and time the outreach during March or October to maximize success.
 
 Follow this quick rule to build a marketing strategy: <br>
-    -> if call_duration is [>600s] and contact == cellular and month in [mar, oct] -> prioritize outreach.
-
+    -> IF: call_duration is [>600s] AND contact == cellular AND month in [apr, march] -> prioritize outreach.
 
 ### WHICH CUSTOMER SEGMENTS SHOULD BE PRIORITIZED?
 
@@ -122,29 +120,30 @@ Follow this quick rule to build a marketing strategy: <br>
 
 Based on the insights from Actual vs. Predicted % of Subscribers, the following customer segments emerge as prime targets:
 
-**Job Profile**
-- Customers in the "high_subscribe" group - mainly students, retired, or unemployed have higher natural conversion to become subscribers.
-- These individuals may have more time, fewer commitments, or different motivations for saving or investing in the product.
+**Contact Type: Cellular**
+- The actual subscription count is the highest among customers contacted via cellular.
+- The model also predicts a strong subscription behavior for this customer segment.
 
-**Marital Status**
+  **Strategy**: Prioritize outreach through cellular mode of communication. 
 
-- Single customers are significantly more likely to subscribe, maybe due to greater independent financial decision-making.
+**Duration: >600 seconds (600-1000s, >1000s)**
+- Longer but meaningful conversations with the customers are strongly associated with likelihood of subscription.
+- The model also predicts high conversions, especially for 600-1000s.
 
-**Education**
+  **Strategy**: Focus more on longer, personalized interactions but ensure conversations are meaningful or it might backfire and lead to customer churn.
 
-- Those with tertiary education show consistently higher interest and conversion.
-- It implies that financial literacy or awareness for the investment product could be contributing factors for them to subscribe.
+**Age Group: 30-40 and <30**
+- These age groups show higher actual subscription rates.
+- The model predictions are aligned, especially for the 30-40 age group segment.
 
-**Month & Contact**
+    **Strategy**: Target campaigns for the investment product to catered to younger demographics, mostly under 40.
 
-- Highest actual and predicted conversions observed in March and October.
-- Cellular mode of contact highly dominates in conversion effectiveness.
+**Average Yearly Balance: Low to Medium**
+- Customers with low (<= 500 USD) or medium (500 USD-2000 USD) account balances actually tend to subscribe more.
+- Predictions for these balance segements also closely match actual subscriptions in these groups.
 
-**Call Duration**
-- As mentioned, the longer call duration (> 1000 seconds) show very high actual and predicted success.
-- However, these calls need to be meaningful, well-explanatory and focused towards addressing the customer concerns - else it could backfire and lead to a customer churn.
-  
+  **Strategy**: While balance is not the main deterministic feature, do not exclude lower/medium balance clients - they are responsive.
+
 #### SUMMARY
 
-Prioritize students, retired, single and highly educated customers, contact via cellular and in March or October, with longer but meaningful engagement to boost conversion rates.
-
+Prioritize customers below 40 years, contact them via cellular modes and have detailed yet meaningful conversations, investment product 
